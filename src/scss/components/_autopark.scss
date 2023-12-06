@@ -1,0 +1,87 @@
+.autopark--section {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+
+  .autopark--wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: url("../../assets/images/wheel.webp") center center / cover
+      no-repeat;
+    background-attachment: fixed;
+  }
+  .autopark--text {
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+    width: 100%;
+    color: $gray;
+    padding-bottom: 20px;
+    background: #0000008c;
+    h2 {
+      text-align: center;
+      overflow: hidden;
+      width: 100%;
+      margin: 20px 0 10px;
+      font-size: $sizeH;
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media screen and (max-width: 1024px) {
+        font-size: 50px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+      }
+    }
+    p {
+
+      text-align: center;
+      @media screen and (max-width: 1024px) {
+        font-size: 14px;
+      }
+    }
+
+    &::after {
+      position: relative;
+      display: block;
+      content: "";
+      width: 100px;
+      height: 10px;
+      background: $yellow;
+      margin: 20px 0;
+      animation: slideLine 2s forwards;
+    }
+  }
+  .show--container {
+    width: 100%;
+    padding: 30px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $background;
+    .show--button {
+      cursor: pointer;
+      padding: 10px 25px;
+      font-size: 22px;
+      background: $yellow;
+      &:hover {
+        transition: color 0.4s ease-in-out, background-color 0.3s ease-in-out;
+        background-color: $dark-gray;
+        color: $light-gray;
+      }
+      @media screen and (max-width: 768px) {
+        padding: 20px 10px;
+        font-size: 18px;
+      }
+    }
+  }
+}

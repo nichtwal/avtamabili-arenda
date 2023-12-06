@@ -1,0 +1,171 @@
+.slide--section {
+  width: 100%;
+  animation: slideBlockMain 5s forwards;
+  background: $yellow;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+  &__yellow {
+    animation: slideBlockYellow 4.99999999s forwards;
+    width: 50%;
+    padding-left: 75px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    float: right;
+    order: 2;
+    min-height: 450px;
+    &--text {
+      text-align: center;
+      font-weight: 600;
+     a {
+      color: $dark-gray;
+      h2 {
+        font-size: 50px;
+        cursor: pointer;
+        @media screen and (max-width: 1024px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        @media screen and (max-width: 1024px) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+     }
+    }
+    @media screen and (max-width: 900px) {
+      padding-left: 50px;
+    }
+    @media screen and (max-width: 768px) {
+      min-height: 350px;
+    }
+    @media screen and (max-width: 600px) {
+      padding-left: 20px;
+    }
+    @media screen and (max-width: 510px) {
+      padding-left: 0;
+      align-items: center;
+      min-height: 200px;
+      animation: unset;
+      float: unset;
+      width: 100%
+    }
+  }
+  &__gray {
+    animation: slideBlockGrey 5s forwards;
+    padding-right: 75px;
+    background: $dark-gray;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    order: 1;
+    top: 0;
+    left: 0;
+    width: 50%;
+    min-height: 450px;
+    position: absolute;
+    &--text {
+      text-align: center;
+      font-weight: 600;
+      a {
+        color: $yellow;
+      h2 {
+        font-size: 50px;
+        cursor: pointer;
+        @media screen and (max-width: 1024px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        @media screen and (max-width: 1024px) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      }
+    }
+    @media screen and (max-width: 900px) {
+      padding-right: 50px;
+    }
+    @media screen and (max-width: 768px) {
+      min-height: 350px;
+    }
+    @media screen and (max-width: 600px) {
+      padding-right: 20px;
+    }
+    @media screen and (max-width: 510px) {
+      animation: unset;
+      padding-right: 0;
+      align-items: center;
+      min-height: 200px;
+      position: relative;
+      right: unset;
+      bottom: unset;
+      left: unset;
+      top: unset;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 510px) {
+    flex-direction: column-reverse;
+ justify-content: center;
+  }
+}
+
+@keyframes slideBlockGrey {
+  0% {
+    opacity: 0;
+    right: -100px;
+    bottom: 0;
+    width: 100%;
+  }
+  99% {
+    left: 0;
+    top: 0;
+    width: 50%;
+    position: absolute;
+  }
+  100% {
+    position: relative;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    top: unset;
+    width: 100%;
+  }
+}
+
+@keyframes slideBlockYellow {
+  0% {   width: 50%;
+    float: right;
+  }
+  99% {
+    width: 50%;
+    float: right;
+  }
+  100% {
+   float: unset;
+    width: 100%
+  }
+}
+

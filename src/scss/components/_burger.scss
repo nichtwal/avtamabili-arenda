@@ -1,0 +1,68 @@
+.burger {
+  display: none;
+}
+@media screen and (max-width: 1415px) {
+  .burger {
+    margin-right: 30px;
+    display: block;
+    &--button {
+      background: url("../../assets/layouts/icons/burger.svg") center center /
+        cover no-repeat;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+    &--menu {
+      white-space: nowrap;
+      z-index: 12;
+      background: $background;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 360px;
+      overflow: hidden;
+      opacity: 0;
+      transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+
+      .burger--container {
+        margin: 20px 10px 0;
+        .burger-links {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          a {
+            div {
+              width: 50px;
+              height: 50px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+            &:last-child {
+              margin-left: 7px;
+              div {
+                width: 35px;
+                height: 35px;
+              }
+            }
+          }
+        }
+        li {
+          margin-bottom: 10px;
+          color: $dark-gray;
+          padding: 5px 0;
+        }
+      }
+    }
+    &--menu.active {
+      border-left: 2px solid $yellow;
+      border-bottom: 2px solid $yellow;
+      width: 180px;
+      opacity: 1;
+      transition: width 0.4s ease-in-out;
+    }
+  }
+}

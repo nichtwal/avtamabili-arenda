@@ -1,0 +1,26 @@
+.logos--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $background;
+    flex-wrap: wrap;
+
+    img {
+        margin: 50px 20px;
+        height: 70px;
+        object-fit: contain;
+        &:nth-child(2) {
+            height:80px;
+        }
+        &:nth-child(3) {
+            height:100px;
+        }
+        &:nth-child(4) {
+            height:120px;
+        }
+        &:last-child {
+            height: 65px;
+        }
+    }
+  
+}

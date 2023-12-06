@@ -1,0 +1,73 @@
+.car--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: $background;
+
+    &__text {
+        margin: 45px 0 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        h2 {
+            font-size: $sizeH;
+            color: $dark-gray;
+            @media screen and (max-width: 1024px) {
+              font-size:50px;
+            }
+            @media screen and (max-width: 768px) {
+              font-size: 40px;
+             }
+        }
+        p {
+          margin-top: 15px;
+            position: relative;
+            font-size: 22px;
+            @media screen and (max-width: 1024px) {
+              font-size:16px;
+            }
+          }
+      
+          &::after { 
+            justify-self: center;
+            position: relative;
+            display: block;
+            content: "";
+            width: 100px;
+            height: 10px;
+            background: $yellow;
+            margin: 20px 0;
+            // animation: slideLine 1s forwards;
+          }
+    }
+}
+
+@keyframes slideLine {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+      width: 0;
+    }to {
+      transform: translateX(0);
+      opacity: 1;
+      width: 100px;
+    }
+  }
+
+  @keyframes slideButton {
+  from {
+    width: 0;
+  }to {
+    width: $btnWidth;
+  }
+}
+
+.car--containerroute {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background: red;
+}

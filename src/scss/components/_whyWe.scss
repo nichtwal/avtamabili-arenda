@@ -1,0 +1,89 @@
+.company--container {
+  width: 100%;
+  background: $light-gray;
+  padding: 40px 0;
+ 
+  &__text {
+    margin: 45px 0 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    h2 {
+        font-size: $sizeH;
+        color: $dark-gray;
+        @media screen and (max-width: 1024px) {
+          font-size:50px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 40px;
+         }
+    }
+    p {
+      margin-top: 15px;
+        position: relative;
+        font-size: 22px;
+        @media screen and (max-width: 1024px) {
+          font-size:16px;
+        }
+      }
+  
+      &::after { 
+        justify-self: center;
+        position: relative;
+        display: block;
+        content: "";
+        width: 100px;
+        height: 10px;
+        background: $yellow;
+        margin: 20px 0;
+        // animation: slideLine 1s forwards;
+      }
+}
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &--car {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+
+      img {
+        width: 190px;
+        height: 120px;
+        object-fit: contain;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+        color: $dark-gray;
+        max-width: 250px;
+        min-height: 60px;
+        @media screen and (max-width: 1024px) {
+          font-size:16px;
+        }
+      }
+    }
+
+    @media screen and (max-width:1024px) {
+      flex-wrap: wrap;
+      &--car {
+        max-width: 200px;
+      }
+    }
+  }
+}
+@keyframes slideLine {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    width: 100px;
+  }
+}

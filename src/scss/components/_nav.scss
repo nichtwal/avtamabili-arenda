@@ -1,0 +1,33 @@
+.nav--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $yellow;
+  min-height: 40px;
+
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & a {
+      cursor: pointer;
+      color: $dark-gray;
+      text-align: center;
+      min-width: 200px;
+      border-right: 1px solid $dark-gray;
+      transition: color 0.5s all;
+      &:last-child {
+        border: none;
+      }
+
+      &:hover {
+        color: $hover-text;
+        transition: color 0.5s all;
+      }
+    }
+  }
+  @media screen and (max-width:1415px) {
+    display: none;
+  }
+}

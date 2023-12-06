@@ -1,0 +1,206 @@
+.about--container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .about--wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: -1;
+    overflow: hidden;
+    background: url("../../assets/images/about.jpeg") center center / cover
+      no-repeat;
+    background-attachment: fixed;
+  }
+  &__text {
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+    background: #0000008c;
+    min-height: 400px;
+    width: 100%;
+    color: $gray;
+    p {
+      position: relative;
+      font-size: 22px;
+      text-align: center;
+      @media screen and (max-width: 1024px) {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+        margin: 0 10px;
+      }
+      width: 100%;
+      animation: revealText 6s forwards;
+      white-space: nowrap;
+      overflow: hidden;
+      @media screen and (max-width:630px) {
+        white-space: unset;
+        animation: none;
+        padding: 0 30px;
+      }
+    }
+
+    &::after {
+      position: relative;
+      display: block;
+      content: "";
+      width: 100px;
+      height: 10px;
+      background: $yellow;
+      margin: 20px 0;
+      animation: slideLine 2s forwards;
+    }
+  }
+  .about--information {
+    width: 100%;
+    background: $light-gray;
+    padding: 20px 30px;
+    padding-bottom: 30px;
+    h3 {
+      color: #000;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      width: 100%;
+      text-align: center;
+      margin-top: 83px;
+    }
+    p {
+      margin-top: 97px;
+      color: #000;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    &_items {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      flex-wrap: wrap;
+      .info_item {
+        max-width: 281px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .round--wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: #000;
+          z-index: 0;
+        }
+        .rec--wrapper {
+          position: relative;
+          top: -65px;
+          z-index: 1;
+          width: 281px;
+          height: 98px;
+          flex-shrink: 0;
+          border-radius: 0px 0px 8px 8px;
+          border: 1px solid #000;
+          background: #ffda1f;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p {
+            margin-top: 0;
+            margin: 0 35px 0;
+            color: #000;
+            text-align: center;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            max-width: 300px;
+          }
+        }
+      }
+    }
+    .tsk {
+      margin-top: 30px;
+      margin-bottom: 55px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  // .about--rent {
+  //   padding: 0 40px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-direction: column;
+  //   min-height: 300px;
+  //   width: 100%;
+  //   text-align: center;
+  //   background: $black;
+  //   color: $light-gray;
+  //   h3 {
+  //     margin: 10px 0 20px;
+  //     font-size: 30px;
+  //     cursor: pointer;
+  //     @media screen and (max-width: 1024px) {
+  //       font-size: 25px;
+  //     }
+  //     @media screen and (max-width: 768px) {
+  //       font-size: 20px;
+  //     }
+  //   }
+  //   p {
+  //     font-size: 18px;
+  //     font-weight: 400;
+  //     white-space: none;
+  //     @media screen and (max-width: 1024px) {
+  //       font-size: 16px;
+  //     }
+  //     @media screen and (max-width: 768px) {
+  //       font-size: 14px;
+  //     }
+  //   }
+  // }
+}
+@keyframes revealText {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes opasityChange {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideLine {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    width: 100px;
+  }
+}

@@ -1,0 +1,105 @@
+.home--container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 97vh;
+
+  .home--wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index:-1;
+    overflow: hidden;
+    background: url("../../assets/images/ligth.jpg") center center / cover
+      no-repeat;
+    background-attachment: fixed;
+  }
+  &__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    z-index: 0;
+    background: #0000008c;
+    min-height: 200px;
+    width: 100%;
+    color: $gray;
+
+    h2 {
+      text-align: center;
+      overflow: hidden;
+      width: 100%;
+      margin: 20px 0 10px;
+      font-size: $sizeH;
+      text-transform: uppercase;
+      white-space: nowrap;
+      animation: revealText 4s forwards;
+      @media screen and (max-width: 1024px) {
+        font-size: 50px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+      }
+    }
+    p {
+      position: relative;
+      font-size: 22px;
+      text-align: center;
+      @media screen and (max-width: 1024px) {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+        margin: 0 10px;
+      }
+      // animation: opasityChange 5s forwards;
+    }
+
+    &::after {
+      position: relative;
+      display: block;
+      content: "";
+      width: 100px;
+      height: 10px;
+      background: $yellow;
+      margin: 20px 0;
+      animation: slideLine 2s forwards;
+    }
+  }
+  @media screen and (max-width: 930px) {
+    height: 102vh;
+  }
+}
+
+@keyframes revealText {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes opasityChange {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideLine {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    width: 100px;
+  }
+}
