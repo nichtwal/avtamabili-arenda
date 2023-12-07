@@ -1,32 +1,32 @@
 import React from "react";
 import { YMaps, Placemark, Map } from "@pbe/react-yandex-maps";
 import { footerInfo } from "../shared/constants";
-import exit from '../assets/layouts/icons/exit.png'
-import Form from "./Form";
+// import exit from '../assets/layouts/icons/exit.png'
+// import Form from "./Form";
 import whatsup from "../assets/layouts/icons/whatsup.png";
 import telegram from "../assets/layouts/icons/telegram-2.png";
 const Footer = () => {
   const year = new Date().getFullYear();
-const [isActiveForm, setIsActiveForm] = React.useState(false)
-const handleFormActive = () => {
-  document.querySelector('body').style.overflow = 'hidden'
-  setIsActiveForm(true)
-}
-const handleFormDisActive= () => {
-  document.querySelector('body').style.overflow = 'unset'
-  setIsActiveForm(false)
-}
+// const [isActiveForm, setIsActiveForm] = React.useState(false)
+// const handleFormActive = () => {
+//   document.querySelector('body').style.overflow = 'hidden'
+//   setIsActiveForm(true)
+// }
+// const handleFormDisActive= () => {
+//   document.querySelector('body').style.overflow = 'unset'
+//   setIsActiveForm(false)
+// }
   return (
     <footer className="contacts--wrapper">
       <div className="contacts--container">
         <div className="contacts--container__text">
-          <h2 onClick={handleFormActive}>СВЯЗАТЬСЯ С НАМИ</h2>
-          {isActiveForm && (
+          <h2>СВЯЗАТЬСЯ С НАМИ</h2>
+          {/* {isActiveForm && (
             <div className="modal-footer-form" >
               <img src={exit} alt="" onClick={handleFormDisActive}/>
               <Form />
             </div>
-          )}
+          )} */}
           <p>Путешествуй с комфортом, звони НАМ!</p>
         </div>
         <div className="contacts--container__contacts">

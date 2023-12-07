@@ -1,9 +1,18 @@
 import React from "react";
 import { aboutItems } from "../shared/constants";
+import Form from "../components/Form";
 const About = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const modal = React.useRef(null);
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const handleClose = (e) => {
+    if (e.target === modal.current) {
+      setIsOpen(false);
+      document.body.style.overflow = "auto";
+    }
+  };
   return (
     <section className="about--container">
       <div className="about--wrapper"></div>
@@ -32,9 +41,19 @@ const About = () => {
           ))}
         </div>
         <p className="tsk">
-        Наша приоритетная задача- обеспечить Вас автомобилем под ваши персональные нужды в кратчайшие сроки.
+          Наша приоритетная задача- обеспечить Вас автомобилем под ваши
+          персональные нужды в кратчайшие сроки.
         </p>
+        <button className="about-button" onClick={() => { setIsOpen(true); document.body.style.overflow = 'hidden'}}>Оставить заявку</button>
       </div>
+      {isOpen && (
+          <div className="about-modal-form"
+          ref={modal}
+          onClick={(e) => handleClose(e)}
+          >
+            <Form />
+          </div>
+        )}
     </section>
   );
 };

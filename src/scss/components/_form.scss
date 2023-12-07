@@ -86,7 +86,8 @@
           font-size: 14px;
           font-weight: 600;
           border: 1px solid black;
-          transition: opacity 0.4s ease-in-out, background-color 0.3s ease-in-out;
+          transition: opacity 0.4s ease-in-out,
+            background-color 0.3s ease-in-out;
           &:disabled {
             transition: opacity 0.4s ease-in-out;
             opacity: 0.3;
@@ -163,17 +164,17 @@
               font-weight: 400;
               line-height: normal;
             }
-            @media screen and (max-width:1024px) {
-          &:last-child {
-            margin: 5px 0 0;
-          }
+            @media screen and (max-width: 1024px) {
+              &:last-child {
+                margin: 5px 0 0;
+              }
             }
           }
-          @media screen and (max-width:1024px) {
-          flex-wrap: wrap;
+          @media screen and (max-width: 1024px) {
+            flex-wrap: wrap;
           }
         }
-        @media screen and (max-width:1024px) {
+        @media screen and (max-width: 1024px) {
           max-width: 300px;
           min-width: 300px;
         }
@@ -211,7 +212,7 @@
             line-height: normal;
           }
         }
-        @media screen and (max-width:1024px) {
+        @media screen and (max-width: 1024px) {
           max-width: 300px;
           min-width: 300px;
         }
@@ -305,3 +306,4 @@
     }
   }
 }
+
