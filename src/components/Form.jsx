@@ -107,7 +107,7 @@ const opt = connectOptions.map(el => (
                 setFormData({ ...formData, birth: e.target.value })
               }
               value={formData.birth}
-              type="date"
+              type="text"
               placeholder="Дата рождения"
               name="birth"
               id="birth"

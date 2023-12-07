@@ -1,6 +1,6 @@
 .slide--section {
   width: 100%;
-  animation: slideBlockMain 5s forwards;
+
   background: $yellow;
   display: flex;
   align-items: center;
@@ -8,7 +8,6 @@
   overflow: hidden;
   position: relative;
   &__yellow {
-    animation: slideBlockYellow 4.99999999s forwards;
     width: 50%;
     padding-left: 75px;
     display: flex;
@@ -21,29 +20,29 @@
     &--text {
       text-align: center;
       font-weight: 600;
-     a {
-      color: $dark-gray;
-      h2 {
-        font-size: 50px;
-        cursor: pointer;
-        @media screen and (max-width: 1024px) {
-          font-size: 40px;
+      a {
+        color: $dark-gray;
+        h2 {
+          font-size: 50px;
+          cursor: pointer;
+          @media screen and (max-width: 1024px) {
+            font-size: 40px;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 30px;
+          }
         }
-        @media screen and (max-width: 768px) {
-          font-size: 30px;
+        p {
+          font-size: 18px;
+          font-weight: 400;
+          @media screen and (max-width: 1024px) {
+            font-size: 16px;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+          }
         }
       }
-      p {
-        font-size: 18px;
-        font-weight: 400;
-        @media screen and (max-width: 1024px) {
-          font-size: 16px;
-        }
-        @media screen and (max-width: 768px) {
-          font-size: 14px;
-        }
-      }
-     }
     }
     @media screen and (max-width: 900px) {
       padding-left: 50px;
@@ -60,11 +59,17 @@
       min-height: 200px;
       animation: unset;
       float: unset;
-      width: 100%
+      width: 100%;
+    }
+    &.active {
+      animation: slideBlockYellow 4.99999999s forwards;
+      @media screen and (max-width: 510px) {
+        animation: unset;
+      }
     }
   }
   &__gray {
-    animation: slideBlockGrey 5s forwards;
+    opacity: 0;
     padding-right: 75px;
     background: $dark-gray;
     display: flex;
@@ -82,26 +87,26 @@
       font-weight: 600;
       a {
         color: $yellow;
-      h2 {
-        font-size: 50px;
-        cursor: pointer;
-        @media screen and (max-width: 1024px) {
-          font-size: 40px;
+        h2 {
+          font-size: 50px;
+          cursor: pointer;
+          @media screen and (max-width: 1024px) {
+            font-size: 40px;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 30px;
+          }
         }
-        @media screen and (max-width: 768px) {
-          font-size: 30px;
+        p {
+          font-size: 18px;
+          font-weight: 400;
+          @media screen and (max-width: 1024px) {
+            font-size: 16px;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+          }
         }
-      }
-      p {
-        font-size: 18px;
-        font-weight: 400;
-        @media screen and (max-width: 1024px) {
-          font-size: 16px;
-        }
-        @media screen and (max-width: 768px) {
-          font-size: 14px;
-        }
-      }
       }
     }
     @media screen and (max-width: 900px) {
@@ -125,10 +130,16 @@
       top: unset;
       width: 100%;
     }
+    &.active {
+      animation: slideBlockGrey 5s forwards;
+      @media screen and (max-width: 510px) {
+        animation: unset;
+      }
+    }
   }
   @media screen and (max-width: 510px) {
     flex-direction: column-reverse;
- justify-content: center;
+    justify-content: center;
   }
 }
 
@@ -152,11 +163,13 @@
     left: unset;
     top: unset;
     width: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes slideBlockYellow {
-  0% {   width: 50%;
+  0% {
+    width: 50%;
     float: right;
   }
   99% {
@@ -164,8 +177,7 @@
     float: right;
   }
   100% {
-   float: unset;
-    width: 100%
+    float: unset;
+    width: 100%;
   }
 }
-
